@@ -41,7 +41,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok', version: '1.0.0', 
 // ── Serve frontend build ──────────────────────────────────────────────────
 const frontendPath = path.join(__dirname, '../../luzmoda/dist');
 app.use(express.static(frontendPath));
-app.get('*', (req, res) => {
+app.use((req, res) => {
   const indexPath = path.join(frontendPath, 'index.html');
   const fs = require('fs');
   if (fs.existsSync(indexPath)) {
