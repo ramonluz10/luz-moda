@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: luz-moda
+    env: docker
+    dockerfilePath: Dockerfile
+    branch: main
+    plan: free
+    pullRequestPreviews: true
